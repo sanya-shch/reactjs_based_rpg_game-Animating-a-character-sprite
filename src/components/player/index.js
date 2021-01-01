@@ -6,10 +6,11 @@ import useWalk from "../../hooks/use-walk";
 import Actor from "../actor";
 
 function Player({ skin }) {
-  const { dir, step, walk } = useWalk(3);
+  const { dir, step, walk, position } = useWalk(3);
+
   const data = {
     h: 32,
-    w: 32
+    w: 32,
   };
 
   useKeyPress((e) => {
@@ -21,12 +22,13 @@ function Player({ skin }) {
   });
 
   return (
-      <Actor
-        sprite={`/sprites/skins/${skin}.png`}
-        data={data}
-        step={step}
-        dir={dir}
-      />
+    <Actor
+      sprite={`/sprites/skins/${skin}.png`}
+      data={data}
+      step={step}
+      dir={dir}
+      position={position}
+    />
   );
 }
 

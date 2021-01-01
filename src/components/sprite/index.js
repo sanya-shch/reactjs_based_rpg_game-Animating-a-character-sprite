@@ -1,12 +1,14 @@
 import React from "react";
 
-function Sprite({ image, data }) {
+function Sprite({ image, data, position }) {
   const { h, w, y, x } = data;
 
   return (
     <div
       style={{
-        display: "inline-block",
+        position: "absolute",
+        top: position.y,
+        left: position.x,
         height: `${h}px`,
         width: `${w}px`,
         backgroundImage: `url(${image})`,
